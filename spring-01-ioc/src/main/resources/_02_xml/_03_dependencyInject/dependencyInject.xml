@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--通过 setter 方法注入 -->
+    <bean name="director" class="com.learn._02_xml._03_dependencyInject.bean.Director">
+        <property name="name" value="paul"/>
+        <property name="age" value="30"/>
+        <property name="address" value="hotel"/>
+    </bean>
+
+    <bean name="movie" class="com.learn._02_xml._03_dependencyInject.bean.Movie">
+        <property name="name" value="happy"/>
+        <property name="number" value="20240101"/>
+        <property name="director" ref="director"/>
+    </bean>
+
+    <!-- 通过构造器方法注入 -->
+    <bean name="movieA" class="com.learn._02_xml._03_dependencyInject.bean.Movie">
+        <constructor-arg name="name" value="sad"/>
+        <constructor-arg name="number" value="20240202"/>
+        <constructor-arg name="director" ref="director"/>
+    </bean>
+
+    <bean name="movieB" class="com.learn._02_xml._03_dependencyInject.bean.Movie">
+        <!-- index 指定构造器参数顺序（从 0 开始） -->
+        <constructor-arg index="0" value="nancy"/>
+        <constructor-arg ref="director"/>
+    </bean>
+
+    <bean name="movieBB" class="com.learn._02_xml._03_dependencyInject.bean.Movie">
+        <!--相同参数类型的构造器，使用 index 区分 -->
+        <constructor-arg ref="director"/>
+        <constructor-arg index="1" value="var"/>
+    </bean>
+
+    <bean name="movieC" class="com.learn._02_xml._03_dependencyInject.bean.Movie">
+        <!-- 默认使用 value 的值类型进行注入 -->
+        <constructor-arg value="20240303"/>
+        <constructor-arg ref="director"/>
+    </bean>
+
+    <bean name="movieCC" class="com.learn._02_xml._03_dependencyInject.bean.Movie">
+        <!-- type 指定构造器参数类型 -->
+        <constructor-arg type="int" value="20240303"/>
+        <constructor-arg ref="director"/>
+    </bean>
+
+    <!-- 复杂属性的依赖注入 -->
+    <bean id="element" class="com.learn._02_xml._03_dependencyInject.bean.Element"/>
+
+    <bean id="complex" class="com.learn._02_xml._03_dependencyInject.bean.Complex">
+        <!-- String[] -->
+        <property name="names">
+            <array>
+                <value>张三</value>
+                <value>李四</value>
+            </array>
+        </property>
+
+        <!-- List<String> -->
+        <property name="tels">
+            <list>
+                <value>13888</value>
+                <value>13999</value>
+            </list>
+        </property>
+
+        <!-- Set<Element> -->
+        <property name="cats">
+            <set>
+                <!-- Set 直接内置声明 bean -->
+                <bean class="com.learn._02_xml._03_dependencyInject.bean.Element"/>
+                <!-- Set 引用外界声明的 bean -->
+                <ref bean="element"/>
+            </set>
+        </property>
+
+        <!-- Map<String, Object> -->
+        <property name="events">
+            <map>
+                <entry key="8:00" value="起床"/>
+                <entry key="9:00" value-ref="element"/>
+                <entry key="14:00" >
+                    <bean class="com.learn._02_xml._03_dependencyInject.bean.Element"/>
+                </entry>
+                <entry key="18:00" value="睡觉"/>
+            </map>
+        </property>
+
+        <!-- Properties -->
+        <property name="props">
+            <props>
+                <prop key="sex">男</prop>
+                <prop key="age">23</prop>
+            </props>
+        </property>
+
+    </bean>
+
+</beans>

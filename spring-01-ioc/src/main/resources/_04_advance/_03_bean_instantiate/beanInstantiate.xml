@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 配置创建 Car 对象 -->
+    <bean id="car1" class="com.learn._04_advanced._03_bean_instantiate.bean.Car"/>
+
+
+    <!-- 配置静态工厂创建 Car 对象 -->
+    <bean id="car2"
+          class="com.learn._04_advanced._03_bean_instantiate.factory.CarStaticFactory"
+          factory-method="getCar"/>
+
+
+    <!-- 配置实例工厂创建 Car 对象: 需要先创建实例工厂的 bean 再使用其创建 Car 对象 -->
+    <bean id="carInstanceFactory"
+          class="com.learn._04_advanced._03_bean_instantiate.factory.CarInstanceFactory"/>
+    <bean id="car3"
+          factory-bean="carInstanceFactory"
+          factory-method="getCar"/>
+
+</beans>

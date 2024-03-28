@@ -1,0 +1,7 @@
+# jdbc 连接配置
+yml:
+  jdbc:
+    url: jdbc:mysql://localhost:3306/test
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root_yml
+    password: 123456

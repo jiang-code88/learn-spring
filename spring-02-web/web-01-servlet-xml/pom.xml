@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.main</groupId>
+        <artifactId>spring-02-web</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>web-01-servlet-xml</artifactId>
+    <packaging>war</packaging>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <!-- 导入 Servlet 的 API 接口依赖,
+             因为需要调用 Servlet 的 API 编写处理 http 请求的逻辑 -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <!-- 在编译、运行、测试时引入使用。
+                 但打包时选择不包含，选择使用实际运行环境提供的依赖，
+                 也就是 Tomcat 自己的依赖。-->
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+</project>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 创建 IOC 容器, 配置创建 Service 的 bean 给请求的处理逻辑使用 -->
+    <bean class="com.learn.service.UserService"/>
+    <bean class="com.learn.service.DepartmentService"/>
+</beans>

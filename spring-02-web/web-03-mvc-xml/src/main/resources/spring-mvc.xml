@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 配置包扫描将 @Controller 注解标记的 servlet 处理器实例化为 bean -->
+    <context:component-scan base-package="com.learn.controller"/>
+
+    <!-- 配置视图解析器(识别 jsp 页面相对路径字符串解析为实际 jsp 页面)的 bean -->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!-- jsp文件路径的前缀 -->
+        <property name="prefix" value="/WEB-INF/pages/" />
+        <!-- jsp文件的后缀 -->
+        <property name="suffix" value=".jsp" />
+    </bean>
+</beans>

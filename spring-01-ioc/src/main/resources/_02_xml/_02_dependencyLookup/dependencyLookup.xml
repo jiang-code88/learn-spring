@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="per" class="com.learn._02_xml._02_dependencyLookup.bean.Person"/>
+
+    <!-- InfoDao 接口的实现类 -->
+    <bean class="com.learn._02_xml._02_dependencyLookup.bean.impl.InfoMySQLDaoImpl"/>
+
+    <!-- DemoDao 接口的实现类 -->
+    <bean id="demoMySQLDao" class="com.learn._02_xml._02_dependencyLookup.bean.impl.DemoMySQLDaoImpl"/>
+    <bean id="demoOracleDao" class="com.learn._02_xml._02_dependencyLookup.bean.impl.DemoOracleDaoImpl"/>
+    <bean class="com.learn._02_xml._02_dependencyLookup.bean.impl.DemoPostgresDaoImpl"/>
+    <bean class="com.learn._02_xml._02_dependencyLookup.bean.impl.DemoPostgresDaoImpl"/>
+
+    <!-- 被 @Color 注解标记的类 -->
+    <bean id="black" class="com.learn._02_xml._02_dependencyLookup.bean.Black"/>
+    <bean id="red" class="com.learn._02_xml._02_dependencyLookup.bean.Red"/>
+    <!-- 没有被 @Color 注解标记的类 -->
+    <bean id="dog" class="com.learn._02_xml._02_dependencyLookup.bean.Dog"/>
+
+</beans>
