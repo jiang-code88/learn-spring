@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/aop
+                           https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="financeService"
+          class="com.learn._03_AOP_xml.service.FinanceService"/>
+
+    <bean id="orderService"
+          class="com.learn._03_AOP_xml.service.impl.OrderServiceImpl"/>
+
+    <bean id="logger"
+          class="com.learn._03_AOP_xml.Logger"/>
+
+    <aop:config>
+        <!-- 定义切面 -->
+        <aop:aspect id="loggerAspect" ref="logger">
+            <!-- 定义通知类型 + 定义切入点表达式 -->
+            <!-- 切入 FinanceService 类的 addMoney 方法之前执行 logger 切面类的 beforePrint 方法 -->
+            <aop:before method="beforePrint"
+                        pointcut="execution(public void com.learn._03_AOP_xml.service.FinanceService.addMoney(double))"/>
+            <aop:after method="afterPrint"
+                       pointcut="execution(public * com.learn._03_AOP_xml.service.OrderService.*(..))"/>
+            <aop:after-throwing method="afterThrowingPrint"
+                       pointcut="execution(public double com.learn._03_AOP_xml.service.FinanceService.subtractMoney(double))"/>
+        </aop:aspect>
+    </aop:config>
+
+
+</beans>

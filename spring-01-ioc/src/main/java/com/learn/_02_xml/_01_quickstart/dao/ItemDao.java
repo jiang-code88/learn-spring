@@ -3,7 +3,7 @@ package com.learn._02_xml._01_quickstart.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JpaItemDao {
+public class ItemDao {
     public List<String> itemNames;
 
     public List<String> getItemNames(){

@@ -4,11 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="accountDao" class="com.learn._02_xml._01_quickstart.dao.JpaAccountDao">
+    <bean id="accountDao" class="com.learn._02_xml._01_quickstart.dao.AccountDao">
         <!-- additional collaborators and configuration for this bean go here -->
     </bean>
 
-    <bean id="itemDao" class="com.learn._02_xml._01_quickstart.dao.JpaItemDao">
+    <bean id="itemDao" class="com.learn._02_xml._01_quickstart.dao.ItemDao">
         <!-- additional collaborators and configuration for this bean go here -->
     </bean>
 

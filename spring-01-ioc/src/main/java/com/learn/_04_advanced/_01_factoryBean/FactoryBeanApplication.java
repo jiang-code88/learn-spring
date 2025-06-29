@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 /**
  * 借助 FactoryBean 使用工厂方法，创建一些初始化流程比较复杂的 bean
  *
- * FactoryBean 是一个接口，实现其并其实现中指定实际 bean 的创建逻辑
+ * FactoryBean 是一个接口，实现其并在其实现中指定实际 bean 的创建逻辑
  *  - getObject() 方法：返回该 FactoryBean 所要创建的 bean
  *  - getObjectType() 方法：返回 FactoryBean 创建 bean 的类型
  *  - isSingleton() 方法：返回该 FactoryBean 创建的对象是单实例 Bean 还是原型 Bean, 默认单实例
