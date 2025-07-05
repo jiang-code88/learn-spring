@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * SpringFramework 官网提供的 quickstart 示例
- *  - 使用配置文件容器类
+ * - 使用配置文件容器类
  */
 public class QuickStartApplication {
     public static void main(String[] args) {
@@ -18,7 +18,8 @@ public class QuickStartApplication {
                 "_02_xml/_01_quickstart/daos.xml");
 
         // retrieve configured instance
-        PetStoreService service = context.getBean("petStore", PetStoreService.class);
+        PetStoreService service =
+                context.getBean("petStore", PetStoreService.class);
 
         // use configured instance
         List<String> userList = service.getUsernameList();

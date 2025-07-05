@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ItemDao {
-    public List<String> itemNames;
-
     public List<String> getItemNames(){
-        itemNames = new ArrayList<>();
+        List<String> itemNames = new ArrayList<>();
         itemNames.add("item=apple");
         itemNames.add("item=banana");
         itemNames.add("item=orange");
