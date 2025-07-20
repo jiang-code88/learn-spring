@@ -1,6 +1,5 @@
 package com.learn._04_advanced._06_enableModule.module.selector;
 
-import com.learn._04_advanced._06_enableModule.bean.Bar;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class BarConfiguration {
     @Bean
-    public Bar BBbar(){
+    public Bar barConfigurationSelector(){
         return new Bar();
     }
 }

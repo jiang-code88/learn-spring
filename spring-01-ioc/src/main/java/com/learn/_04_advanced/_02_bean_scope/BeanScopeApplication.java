@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
- * Ioc 容器中作用域为单例和原型的 bean 的使用：
+ * Ioc 容器中作用域为单例和原型的 bean：
  *  - 单实例 bean：从一个 IOC 容器中只能获取到同一个 bean
  *  - 原型 bean：每次获取都是重新创建的 bean
  */

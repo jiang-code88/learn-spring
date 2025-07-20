@@ -12,7 +12,7 @@ public class Cat {
     }
 
     public void setName(String name) {
-        System.out.println(name + " setter 方法被调用...");
+        System.out.println("Cat setter 方法被调用...");
         this.name = name;
     }
 
@@ -23,7 +23,7 @@ public class Cat {
     }
 
     // Bean 销毁的回调方法
-    // 将在 bean 被销毁回收前调用，方法访问限制是 private 还是 public 经尝试发现并不影响
+    // 将在 bean 被销毁回收前调用
     private void destroy(){
         System.out.println(name + " 被销毁了...");
     }

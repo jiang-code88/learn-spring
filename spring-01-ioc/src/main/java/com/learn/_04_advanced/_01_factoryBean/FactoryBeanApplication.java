@@ -25,15 +25,18 @@ import java.util.stream.Stream;
  *    生成一个 ToyFactoryBean 类型的 bean（注入 Child 类型的 bean）用于生成 Ball 或 Car 实例
  *
  * FactoryBean 的机制：
- *  - FactoryBean 本身的加载(实例化)是伴随 IOC 容器的初始化, 一起加载到容器中的
+ *  - FactoryBean 本身的加载(实例化)是伴随 IOC 容器的初始化被一同加载到容器中的。
  *  - FactoryBean 生产 Bean 的机制是延迟生产, 即当调用容器的 getBean() 方法获取对应类型 bean 时,
  *    IOC 容器才会自动识别, 调用 FactoryBean 的 getObject() 方法创建对应的 bean;
  *  - 针对默认的单实例 FactoryBean, 第一次调用 getBean() 方法创建的对应 bean 会被缓存起来,
  *    后续 getBean() 获取的都是同一个 bean 即缓存起来的那个 bean。
  */
 public class FactoryBeanApplication {
+    public static int i = 1;
+    public static String commentText = "========%s========%n";
+
     public static void main(String[] args) {
-        System.out.println("1--------------------------------------------------");
+        System.out.printf(commentText, i++);
         ApplicationContext context =
                 new AnnotationConfigApplicationContext(
                         FactoryBeanConfiguration.class);
@@ -44,7 +47,7 @@ public class FactoryBeanApplication {
         System.out.println(toyBean);
 
 
-        System.out.println("2--------------------------------------------------");
+        System.out.printf(commentText, i++);
         // Toy 类型(Ball/Car)的 bean 的 beanName 其实是 "toyFactoryBean"
         String[] namesForType = context.getBeanNamesForType(Toy.class);
         Stream.of(namesForType).forEach(System.out::println);
@@ -53,29 +56,31 @@ public class FactoryBeanApplication {
         System.out.println(context.getBean("toyFactoryBean"));
 
 
-        System.out.println("3--------------------------------------------------");
+        System.out.printf(commentText, i++);
         // 获取容器中所有 bean 的 beanName, 是会发现 IOC 容器中并不存在 ToyFactoryBean 类型的 bean
         // 但其实它是存在于 IOC 容器的, 只是获取其的意义不大，被 IOC 容器隐藏起来没有显示
         Stream.of(context.getBeanDefinitionNames()).forEach(System.out::println);
 
 
-        System.out.println("4--------------------------------------------------");
+        System.out.printf(commentText, i++);
         // 通过 ToyFactoryBean 类型即可获取 IOC 容器中 FactoryBean 的本身的 bean
         ToyFactoryBean toFactoryBean = context.getBean(ToyFactoryBean.class);
         System.out.println(toFactoryBean);
 
 
-        System.out.println("5--------------------------------------------------");
+        System.out.printf(commentText, i++);
         // IOC 容器中 ToyFactoryBean.class 本身的 bean 的 beanName
         // 其实叫做 &toyFactoryBean (在名称开头增加了一个 "&" 字符)
         System.out.println(context.getBean("&toyFactoryBean"));
 
 
-        System.out.println("6--------------------------------------------------");
+        System.out.printf(commentText, i++);
         // 如果通过 isSingleton() 指定 FactoryBean 生成的 bean 是单例的, 那么多次获取的将都是同一个 bean
         Toy toyA = context.getBean(Toy.class);
         Toy toyB = context.getBean(Toy.class);
         // 对比两次从容器中获取的 bean 的内存地址, 是否相同
+        System.out.println(toyA);
+        System.out.println(toyB);
         System.out.println(toyA == toyB);
 
     }

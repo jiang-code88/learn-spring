@@ -18,31 +18,36 @@
 
     <!-- 通过构造器方法注入 -->
     <bean name="movieA" class="com.learn._02_xml._03_dependencyInject.bean.Movie">
+        <!-- 构造函数：Movie(String name, int number, Director director){...} -->
         <constructor-arg name="name" value="sad"/>
         <constructor-arg name="number" value="20240202"/>
         <constructor-arg name="director" ref="director"/>
     </bean>
 
     <bean name="movieB" class="com.learn._02_xml._03_dependencyInject.bean.Movie">
-        <!-- index 指定构造器参数顺序（从 0 开始） -->
+        <!-- index 指定构造器参数顺序（index 默认从 0 开始） -->
+        <!-- 构造函数：Movie(String name, Director director){...} -->
         <constructor-arg index="0" value="nancy"/>
         <constructor-arg ref="director"/>
     </bean>
 
     <bean name="movieBB" class="com.learn._02_xml._03_dependencyInject.bean.Movie">
-        <!--相同参数类型的构造器，使用 index 区分 -->
+        <!--相同参数类型但顺序不同的构造器，使用 index 区分 -->
+        <!-- 构造函数：Movie(Director director, String var){...} -->
         <constructor-arg ref="director"/>
         <constructor-arg index="1" value="var"/>
     </bean>
 
     <bean name="movieC" class="com.learn._02_xml._03_dependencyInject.bean.Movie">
         <!-- 默认使用 value 的值类型进行注入 -->
-        <constructor-arg value="20240303"/>
+        <!-- 构造函数：Movie(Director director, String var){...} -->
+        <constructor-arg value="20240303"/> <!-- "20240303" 默认为字符串类型 -->
         <constructor-arg ref="director"/>
     </bean>
 
     <bean name="movieCC" class="com.learn._02_xml._03_dependencyInject.bean.Movie">
         <!-- type 指定构造器参数类型 -->
+        <!-- 构造函数：Movie(int number, Director director){...} -->
         <constructor-arg type="int" value="20240303"/>
         <constructor-arg ref="director"/>
     </bean>

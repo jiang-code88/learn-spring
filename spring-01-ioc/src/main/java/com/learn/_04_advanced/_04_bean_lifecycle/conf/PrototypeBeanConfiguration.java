@@ -1,6 +1,6 @@
 package com.learn._04_advanced._04_bean_lifecycle.conf;
 
-import com.learn._04_advanced._04_bean_lifecycle.bean.prototype.PrototypeBean;
+import com.learn._04_advanced._04_bean_lifecycle.bean.prototypeBean.PrototypeBean;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;

@@ -3,7 +3,7 @@ package com.learn._04_advanced._05_eventListener.buildInEventLister;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
- * Spring 的事件监听机制（观察者模式在 Spring 中的实现）
+ * Spring 的事件监听机制（观察者设计模式在 Spring 中的实现）
  *  - 模型：事件源(事件) ==观察==> 事件广播器(观察者) ==绑定==> 监听器(订阅者)
  *  - IOC 容器本身就是事件广播器, 是观察者
  *
@@ -21,7 +21,7 @@ public class BuildInEventListenerApplication {
         System.out.println("IOC 容器准备初始化...");
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(
-                "com.learn._04_advance._05_eventListener.buildInEventLister.listener");
+                "com.learn._04_advanced._05_eventListener.buildInEventLister.listener");
         System.out.println("IOC 容器初始化完成...");
 
         System.out.println("\n---------------------------------------------\n");

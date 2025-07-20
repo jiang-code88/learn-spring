@@ -4,9 +4,11 @@ import com.learn._04_advanced._04_bean_lifecycle.conf.MultipleInitDestroyConfigu
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
- * 将三种 @Bean配置 / @PostConstruct+@PreDestroy注解配置 / 接口配置的
+ * 将三种 @Bean配置 / @PostConstruct+@PreDestroy注解配置 / InitializingBean+DisposableBean接口配置的
  * 初始化和销毁回调方法都融合到一个 Multiple 类型的 bean 中。
- *  - 执行顺序为: @PostConstruct -> InitializingBean -> initMethod
+ *  - 执行顺序为: @PostConstruct+@PreDestroy 注解
+ *                  -> InitializingBean+DisposableBean接口
+ *                      -> @Bean(initMethod+destroyMethod) 属性
  */
 public class MultipleInitDestroyApplication {
     public static void main(String[] args) {
@@ -16,6 +18,7 @@ public class MultipleInitDestroyApplication {
                 = new AnnotationConfigApplicationContext(
                         MultipleInitDestroyConfiguration.class);
         System.out.println("<<<< 初始化 IOC 容器完成");
+
         System.out.println("\n----------------------------------\n");
 
         System.out.println(">>>> 准备销毁 IOC 容器");

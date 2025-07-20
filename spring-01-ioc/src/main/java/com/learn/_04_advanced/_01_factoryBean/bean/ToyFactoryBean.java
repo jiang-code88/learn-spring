@@ -46,7 +46,7 @@ public class ToyFactoryBean implements FactoryBean<Toy> {
     public String toString() {
         return "ToyFactoryBean{" +
                 "child=" + child +
-                ", class=" +super.toString() +
+                ", class=" + super.toString() +
                 '}';
     }
 }

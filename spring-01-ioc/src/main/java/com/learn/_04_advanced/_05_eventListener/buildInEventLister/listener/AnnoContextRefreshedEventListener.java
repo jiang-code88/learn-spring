@@ -12,8 +12,7 @@ public class AnnoContextRefreshedEventListener {
     // 监听 Spring 框架内置 ContextRefreshedEvent 事件
     @EventListener
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-        System.out.println(
-                "ContextRefreshApplicationListener 监听器(注解标记绑定的监听器), " +
+        System.out.println("ContextRefreshApplicationListener 监听器(注解标记绑定的监听器), " +
                         "监听到 ContextRefreshedEvent 事件的发生");
     }
 }

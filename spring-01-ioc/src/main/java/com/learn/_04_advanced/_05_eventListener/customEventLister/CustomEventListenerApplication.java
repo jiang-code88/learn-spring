@@ -28,7 +28,7 @@ public class CustomEventListenerApplication {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(
-                "com.learn._04_advance._05_eventListener.customEventLister");
+                "com.learn._04_advanced._05_eventListener.customEventLister");
 
         // 获取事件广播器，广播一个 username 为 "John" 的事件
         RegisterService registerService = context.getBean(RegisterService.class);

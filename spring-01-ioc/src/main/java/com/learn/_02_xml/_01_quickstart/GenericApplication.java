@@ -24,7 +24,8 @@ public class GenericApplication {
         context.refresh();
 
         // retrieve configured instance
-        PetStoreService service = context.getBean("petStore", PetStoreService.class);
+        PetStoreService service =
+                context.getBean("petStore", PetStoreService.class);
 
         // use configured instance
         List<String> userList = service.getUsernameList();

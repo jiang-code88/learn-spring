@@ -1,6 +1,5 @@
 package com.learn._04_advanced._07_profile.module.selector;
 
-import com.learn._04_advanced._07_profile.bean.Bar;
 import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.type.AnnotationMetadata;
 

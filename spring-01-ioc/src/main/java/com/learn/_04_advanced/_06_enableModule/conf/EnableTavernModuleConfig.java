@@ -1,6 +1,6 @@
 package com.learn._04_advanced._06_enableModule.conf;
 
-import com.learn._04_advanced._06_enableModule.anno.EnableTavern ;
+import com.learn._04_advanced._06_enableModule.module.anno.EnableTavern ;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration()

@@ -6,6 +6,7 @@ import com.learn._02_xml._02_dependencyLookup.bean.Dog;
 import com.learn._02_xml._02_dependencyLookup.bean.impl.DemoDao;
 import com.learn._02_xml._02_dependencyLookup.bean.Person;
 import com.learn._02_xml._02_dependencyLookup.bean.impl.InfoDao;
+import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

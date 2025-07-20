@@ -1,6 +1,7 @@
 package com.learn._04_advanced._08_conditional.customConditional.conf;
 
-import com.learn._04_advanced._08_conditional.customConditional.anno.EnableTavern;
+
+import com.learn._04_advanced._08_conditional.customConditional.module.anno.EnableTavern;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration()

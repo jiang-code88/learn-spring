@@ -1,6 +1,5 @@
 package com.learn._04_advanced._06_enableModule.module.selector;
 
-import com.learn._04_advanced._06_enableModule.bean.Bar;
 import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.type.AnnotationMetadata;
 import java.util.ArrayList;

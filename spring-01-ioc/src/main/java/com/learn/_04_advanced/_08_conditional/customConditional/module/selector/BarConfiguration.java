@@ -1,8 +1,7 @@
 package com.learn._04_advanced._08_conditional.customConditional.module.selector;
 
-import com.learn._04_advanced._08_conditional.customConditional.anno.ConditionalOnBean;
-import com.learn._04_advanced._08_conditional.customConditional.bean.Bar;
-import com.learn._04_advanced._08_conditional.customConditional.bean.Boss;
+import com.learn._04_advanced._08_conditional.customConditional.condition.ConditionalOnBean;
+import com.learn._04_advanced._08_conditional.customConditional.module.bean.Boss;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,8 +11,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class BarConfiguration {
     @Bean
-    @ConditionalOnBean(beans = Boss.class)
-    public Bar BBbar(){
+    @ConditionalOnBean(Boss.class)
+    public Bar barConfigurationSelector(){
         return new Bar();
     }
 }

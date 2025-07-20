@@ -1,6 +1,6 @@
 package com.learn._04_advanced._08_conditional.basicUsage.conf;
 
-import com.learn._04_advanced._08_conditional.basicUsage.anno.EnableTavern;
+import com.learn._04_advanced._08_conditional.basicUsage.module.anno.EnableTavern;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration()

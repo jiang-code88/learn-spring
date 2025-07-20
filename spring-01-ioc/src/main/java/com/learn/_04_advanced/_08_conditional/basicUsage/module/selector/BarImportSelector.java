@@ -1,6 +1,5 @@
 package com.learn._04_advanced._08_conditional.basicUsage.module.selector;
 
-import com.learn._04_advanced._08_conditional.basicUsage.bean.Bar;
 import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.type.AnnotationMetadata;
 

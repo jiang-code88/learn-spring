@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 /**
  * Spring 的条件装配
  *  - @profile 注解是根据当前项目的运行时环境不同，可以动态的注册当前运行环境匹配的组件
- *  - @Profile 注解可以标注在组件上，当一个配置属性（并不是文件）激活时，
+ *  - @Profile 注解可以标注在组件（@Bean/@Configuration）上，当一个配置属性激活时，
  *    它才会起作用，而激活这个属性的方式有很多种（启动参数、环境变量、web.xml 配置等）
  *  - 默认情况下，ApplicationContext 中的 profile 为 “default”
  *
@@ -24,13 +24,19 @@ public class ProfileEnableTavernModuleApplication {
                 new AnnotationConfigApplicationContext();
 
         // 1. 通过容器环境变量设置 profile 条件
-        // 给 ApplicationContext 的环境设置 profile 配置
-        // context.getEnvironment().setActiveProfiles("city");
+        // context.getEnvironment().setActiveProfiles("city"); // 给 ApplicationContext 的环境设置 profile 配置
+
+        // 之所以这里是先设置 profile 条件再注册配置类创建容器，
+        // 是因为在 new AnnotationConfigApplicationContext 的时候，
+        // 如果传入了配置类，它内部就自动初始化完成了（调用 refresh），所有 Bean 也就都创建好了，
+        // 之后再设置的 profile 条件，已经无法控制组件要被注册了。
         context.register(EnableTavernModuleConfig.class);
         context.refresh();
 
+
         // 2. 通过启动参数设置 profile 条件
         // VM options: -Dspring.profiles.active=city
+
 
         // profile 配置设置了 “city” 条件才会导入 Bartender 实例，否则不会导入。
         Stream.of(context.getBeanDefinitionNames()).forEach(System.out::println);
