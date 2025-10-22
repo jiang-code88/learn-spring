@@ -13,6 +13,8 @@ import org.springframework.stereotype.Component;
 public class AnimalBeanPostProcessor implements BeanPostProcessor {
 
     // 在 bean 初始化前执行
+    // 方法参数传入 Object 类型的 bean 和方法返回 Object 类型的 bean 意味着
+    // 通过后置处理器可以直接替换 bean 实例对象。
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName)
             throws BeansException {

@@ -16,11 +16,11 @@ public class AnimalInstantiationAwareBeanPostProcessor
     @Override
     public Object postProcessBeforeInstantiation(Class<?> beanClass,
                                                  String beanName) throws BeansException {
-        // 拦截 beanName 为 ball 的 bean 的实例化，然后实例化一个新的 bean 替换掉
+        // 拦截 beanName 为 "ball" 的 bean 的实例化，然后实例化一个新的 bean 替换掉
         if ("ball".equals(beanName)){
             // 返回非null，代表拦截创建
             Ball ball = new Ball();
-            ball.setName("postBeforeInstantiation");
+            ball.setName("postProcessBeforeInstantiation");
             return ball;
         }
         // 默认直接返回null，代表不拦截
@@ -30,8 +30,9 @@ public class AnimalInstantiationAwareBeanPostProcessor
     // 在 bean 属性注入前执行
     @Override
     public PropertyValues postProcessProperties(PropertyValues pvs,
-                                                Object bean, String beanName) throws BeansException {
-        // 拦截 beanName 为 ball 的 bean 的实例化，然后给他的 name 属性赋值 Timmy
+                                                Object bean,
+                                                String beanName) throws BeansException {
+        // 拦截 beanName 为 "ball2" 的 bean 的实例化，然后给他的 name 属性赋值 Timmy
         if ("ball2".equals(beanName)){
             MutablePropertyValues values = new MutablePropertyValues(pvs);
             values.addPropertyValue("name", "Timmy");

@@ -551,3 +551,11 @@ public class OnBeanCondition implements Condition {
 ```
 - 之前的关系条件匹配要指定 @Conditional 注解和条件匹配规则类（matches 方法定义判断逻辑），派生的 @ConditionalOnBean 注解只需要指定条件匹配规则类需要的某个参数，然后就可以自动的去调 @Conditional 注解然后把参数传递到条件匹配规则类的判断逻辑中进行判断。
 
+### Spring IOC 容器 - 高级包扫描（@ComponentScan）
+#### 指定 Class 包扫描
+代码目录：spring-01-ioc/src/main/java/com/learn/_04_advanced/_09_advance_componentScan/basePackageClassesComponentScan/BasePackageClassComponentScanApplication.java
+
+@ComponentScan 组件扫描组件不但支持指定包的全限定名还支持指定类的全限定名，将扫描指定类所在包及其子包下的所有组件
+
+#### 具体规则包扫描
+代码目录：spring-01-ioc/src/main/java/com/learn/_04_advanced/_09_advance_componentScan/filterComponentScan/FilterComponentScanApplication.java

@@ -13,8 +13,8 @@ import java.util.stream.Stream;
  * @PropertySource 注解加载外部文件
  *  - 常用于加载应用的配置文件（常用的配置文件格式为 .properties 文件）
  *  - @PropertySource 还可以用于引入 xml 格式的配置文件（但是要遵从很严格的格式约束，因此弃用）。
- *  - @PropertySource 底层默认使用 jdb 的 Properties 类，来解析 .properties 和 .xml 配置文件，
- *    注解解析文件的默认策略类为 DefaultPropertySourceFactory。
+ *  - @PropertySource 底层默认使用 jdk 的 Properties 类，来解析 .properties 和 .xml 配置文件，
+ *    解析文件的默认策略类为 DefaultPropertySourceFactory。
  *
  * 需求：
  * 使用 @PropertySource 注解实现读取 .yml 文件的配置项
@@ -34,10 +34,10 @@ public class PropertySourceApplication {
 
         // 使用 @PropertySource 注解实现读取 .properties 文件的配置项
         System.out.println("----------------------------");
-        System.out.println(context.getBean(JdbcProperties.class).toString());
+        System.out.println(context.getBean(JdbcProperties.class));
 
         // 使用 @PropertySource 注解实现读取 .yml 文件的配置项
         System.out.println("----------------------------");
-        System.out.println(context.getBean(JdbcYmlProperties.class).toString());
+        System.out.println(context.getBean(JdbcYmlProperties.class));
     }
 }

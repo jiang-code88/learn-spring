@@ -11,7 +11,7 @@ public class White {
 
     // 需求：取 Green 类型 bean 的 name 属性值的前 15 个字符
     // 使用 SpEL 表达式调用方法
-    @Value("#{green.name.substring(0,15)}")
+    @Value("#{notColorGreen.name.substring(0,15)}")
     private String name;
 
     // 需求：order 属性的值取 Integer 的最大值

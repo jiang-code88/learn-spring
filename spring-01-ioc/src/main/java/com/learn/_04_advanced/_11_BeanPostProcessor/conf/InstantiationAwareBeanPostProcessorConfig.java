@@ -7,11 +7,11 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class InstantiationAwareBeanPostProcessorConfig {
-    // 容器创建 beanName 为 ball 的实例，但是被拦截器拦截替换掉实例。
+    // 容器创建 beanName 为 "ball" 的实例，后续会被拦截器拦截替换掉实例。
     @Bean
     public Ball ball(){
         Ball ball = new Ball();
-        ball.setName("init");
+        ball.setName("init ball");
         return ball;
     }
 

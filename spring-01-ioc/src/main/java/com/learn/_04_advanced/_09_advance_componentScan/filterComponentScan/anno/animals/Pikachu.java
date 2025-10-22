@@ -1,4 +1,4 @@
-package com.learn._04_advanced._09_advance_componentScan.filterComponentScan.animals;
+package com.learn._04_advanced._09_advance_componentScan.filterComponentScan.anno.animals;
 
 import org.springframework.stereotype.Component;
 

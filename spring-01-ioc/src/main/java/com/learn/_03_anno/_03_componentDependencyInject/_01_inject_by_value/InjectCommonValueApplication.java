@@ -38,7 +38,7 @@ public class InjectCommonValueApplication {
         System.out.println(blue);
 
         // SpEL 表达式可以取 IOC 容器中其它 bean 的属性值
-        Green green = context.getBean("green", Green.class);
+        Green green = context.getBean("notColorGreen", Green.class);
         System.out.println(green);
 
         // SpEL 表达式不仅可以引用对象的属性，还可以直接引用类常量，以及调用对象的方法等

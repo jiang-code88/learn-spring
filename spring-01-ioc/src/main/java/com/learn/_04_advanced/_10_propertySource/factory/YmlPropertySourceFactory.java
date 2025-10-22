@@ -25,7 +25,8 @@ public class YmlPropertySourceFactory implements PropertySourceFactory {
         // 4. 如果 @PropertySource 注解的
         // name 属性没有指定资源文件的 name, 则使用资源文件名作为 name
         return new PropertiesPropertySource(
-                (name != null ? name : resource.getResource().getFilename()),
-                yamlPropertiesFactoryProperties);
+                name != null ? name : resource.getResource().getFilename(),
+                yamlPropertiesFactoryProperties
+        );
     }
 }
