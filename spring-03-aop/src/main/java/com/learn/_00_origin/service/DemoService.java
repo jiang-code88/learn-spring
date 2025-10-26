@@ -1,11 +1,8 @@
-package com.learn._01_origion.service;
+package com.learn._00_origin.service;
 
-public interface DemoPointService {
+public interface DemoService {
     int add(String userId, int points);
-
     int subtract(String userId, int points);
-
     int multiply(String userId, int points);
-
     int divide(String userId, int points);
 }

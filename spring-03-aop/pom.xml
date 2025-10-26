@@ -29,6 +29,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
+            <version>${spring.framework.version}</version>
         </dependency>
         <!-- 导入 aspectjweaver 依赖 -->
         <dependency>

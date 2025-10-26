@@ -1,19 +1,21 @@
-package com.learn._02_Cglib.service;
+package com.learn._00_origin.service.impl;
 
-public class DemoPointService {
+import com.learn._00_origin.service.DemoService;
 
+public class DemoServiceImpl implements DemoService {
+    @Override
     public int add(String userId, int points) {
         return points;
     }
-
+    @Override
     public int subtract(String userId, int points) {
         return points;
     }
-
+    @Override
     public int multiply(String userId, int points) {
         return points;
     }
-
+    @Override
     public int divide(String userId, int points) {
         return points;
     }
