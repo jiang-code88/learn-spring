@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 /**
  * 组件注册与扫描（直接指定包扫描路径启动容器）：
- * 1. 容器创建时直接扫描 AnnotationConfigApplicationContext 类指定路径包
+ * 1. 容器创建时直接扫描 AnnotationConfigApplicationContext 类参数指定路径的包
  *    及其子包下所有使用 @Component 注解标记的类, 创建其 bean 放入容器。
  * 2. 如果 IOC 容器需要实例化的对象数量庞大，每个对象都编写一个 @Bean + 返回对象方法的话
  *    工作量非常大，开发效率低，所以 spring 提供一系列模版注解，如 @Component、 @Controller

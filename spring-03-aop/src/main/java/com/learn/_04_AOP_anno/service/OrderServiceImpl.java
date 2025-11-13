@@ -1,4 +1,4 @@
-package com.learn._04_AOP_anno.service.impl;
+package com.learn._04_AOP_anno.service;
 
 import com.learn._04_AOP_anno.aop.Log;
 import com.learn._04_AOP_anno.service.OrderService;
@@ -16,23 +16,23 @@ public class OrderServiceImpl implements OrderService {
     @Log
     @Override
     public void createOrder() {
-        System.out.println("OrderServiceImpl 创建订单。。。");
+        System.out.println("OrderServiceImpl createOrder。。。");
     }
 
     @Override
     public void deleteOrderById(String id) {
-        System.out.println("OrderServiceImpl 删除订单，id为" + id);
+        System.out.println("OrderServiceImpl deleteOrderById，id: " + id);
     }
 
     @Override
     public String getOrderById(String id) {
-        System.out.println("OrderServiceImpl 查询订单，id为" + id);
+        System.out.println("OrderServiceImpl getOrderById，id: " + id);
         return id;
     }
 
     @Override
     public List<String> findAll() {
-        System.out.println("OrderServiceImpl 查询所有订单。。。");
+        System.out.println("OrderServiceImpl findAll。。。");
         return Arrays.asList("111", "222", "333");
     }
 }

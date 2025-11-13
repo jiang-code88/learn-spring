@@ -11,17 +11,16 @@ public class FinanceService {
 
     @Log
     public void addMoney(double money) {
-        System.out.println("FinanceService 收钱 === " + money);
+        System.out.println("FinanceService addMoney === " + money);
     }
 
     public double subtractMoney(double money){
-        System.out.println("FinanceService 付钱 === " + money);
-        throw new RuntimeException("abc");
-        // return money;
+        System.out.println("FinanceService subtractMoney === " + money);
+        throw new RuntimeException("FinanceService subtractMoney === " + money);
     }
 
     public double getMoneyById(String id) {
-        System.out.println("FinanceService 查询账户，id为" + id);
+        System.out.println("FinanceService getMoneyById，id: " + id);
         return Math.random();
     }
 }
