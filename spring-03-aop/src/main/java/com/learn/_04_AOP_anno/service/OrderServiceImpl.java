@@ -1,7 +1,5 @@
 package com.learn._04_AOP_anno.service;
 
-import com.learn._04_AOP_anno.aop.Log;
-import com.learn._04_AOP_anno.service.OrderService;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -12,8 +10,6 @@ import java.util.List;
  */
 @Component
 public class OrderServiceImpl implements OrderService {
-
-    @Log
     @Override
     public void createOrder() {
         System.out.println("OrderServiceImpl createOrder。。。");

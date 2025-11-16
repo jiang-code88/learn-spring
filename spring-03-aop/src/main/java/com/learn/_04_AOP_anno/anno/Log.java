@@ -1,4 +1,4 @@
-package com.learn._04_AOP_anno.aop;
+package com.learn._04_AOP_anno.anno;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

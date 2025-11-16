@@ -26,6 +26,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  *        通用切入点表达式使用：切面通知注解 + 通用切入点表达式空方法名
  *     - 使用自定义注解替代切入点表达式，所有标记了 @Log 注解的方法将会被切入执行。
  *        用法：@annotation() + 注解类全限定名
+ *
  */
 public class Application {
     public static void main(String[] args) {
@@ -37,12 +38,17 @@ public class Application {
         System.out.println("---------------------\n");
 
         FinanceService financeService = context.getBean(FinanceService.class);
-        financeService.addMoney(123.23);
-        System.out.println("---------------------\n");
 
         financeService.getMoneyById("abc");
         System.out.println("---------------------\n");
 
-        financeService.subtractMoney(234.45);
+        financeService.addMoney(123.23);
+        System.out.println("---------------------\n");
+
+        financeService.updateMoneyById("bcd");
+        System.out.println("---------------------\n");
+
+        financeService.subtractMoneyThrowException(234.45);
+        System.out.println("---------------------\n");
     }
 }
